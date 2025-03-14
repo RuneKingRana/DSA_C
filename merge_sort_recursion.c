@@ -1,5 +1,5 @@
 #include <stdio.h>
-int i,j,k,n,a[100];
+int i,j,k,n,arr[100];
 // Merge two subarrays L and M into arr
 void merge(int a[],int p, int q, int r) {
 
@@ -63,19 +63,23 @@ void mergeSort(int a[], int l, int r) {
   }
 }
 
+void display(int a[])
+{
+	printf("The sorted array  in accending order is:");
+	for (i=0;i<n;i++){
+		printf("%d  ",a[i]);
+	}
+}
+
 // Driver program
 int main() {
 	printf("Enter size of array:");
 	scanf("%d",&n);
 	printf("Enter elements :");
 	for (j=0;j<n;j++){
-		scanf("%d",&a[j]);
+		scanf("%d",&arr[j]);
 	}
 	
-	mergeSort(a, 0, n - 1);
-	  
-	-printf("The sorted array  in accending order is:");
-	for (i=0;i<n;i++){
-		printf("%d  ",a[i]);
-	}  
+	mergeSort(arr, 0, n - 1);
+	display(arr); 
 }
